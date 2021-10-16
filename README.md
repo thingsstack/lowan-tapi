@@ -11,4 +11,4 @@ In order to run test.TtnTest you have to pass a TTN username and API authenticat
 java -cp lib/nemo.jar;lib/ttnapi.jar ttn.TtnTest -u user -k NNSXS.XXXX
 ```
 
-An verbose output can be obtained by adding the '-v' option.
+A verbose output can be obtained by adding the '-v' option.
