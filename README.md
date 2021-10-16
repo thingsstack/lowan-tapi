@@ -15,3 +15,9 @@ Optional arguments are:
  * **-a appid** specifies the application ID; if not present, the first application is used;
  * **-d devid** specifies the device ID; if not present, the first device of the given application is used;
  * **-h** prints a help message.
+
+|   |  |
+| ------------- | ------------- |
+| -a appid | specifies the application ID; if not present, the first application is used; |
+| -d devid | specifies the device ID; if not present, the first device of the given application is used; |
+| -h | prints a help message. |
