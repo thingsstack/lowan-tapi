@@ -29,7 +29,7 @@ public abstract class TtnTest {
 		String apiKey= flags.getString("-k",null,"key","TTN API key e.g. 'NNSXS.XXX'");
 		String applicationId= flags.getString("-a",null,"appid","Application ID");
 		String deviceId= flags.getString("-d",null,"devid","Device ID");
-		boolean help= flags.getBoolean("-h",null,"prints this message");
+		boolean help= flags.getBoolean("-h","prints this message");
 		
 		if (help) {
 			System.out.println(flags.toUsageString(TtnTest.class));
