@@ -13,6 +13,7 @@ java -cp lib/nemo.jar;lib/ttnapi.jar ttn.TtnTest -u user -k NNSXS.XXXX [-a appid
 
 Optional arguments are:
 
+| option | description |
 | ------------- | ------------- |
 | -a appid | specifies the application ID; if not present, the first application is used; |
 | -d devid | specifies the device ID; if not present, the first device of the given application is used; |
