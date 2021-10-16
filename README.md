@@ -2,8 +2,6 @@
 
 This is an independent Java implementation of The Things Network (TTN) REST API.
 
-The only dependency is on the Nemo libray (https://netsec.unipr.it/project/nemo), included in in the */lib* folder. 
-
 
 ## Example: TtnTest
 
@@ -22,3 +20,8 @@ Optional arguments are:
 | -d devid | specifies the device ID; if not present, the first device of the given application is used; |
 | -v | verbose mode; |
 | -h | prints a help message. |
+
+
+## Dependancies
+
+The code uses the *nemo.jar* library from the Nemo project (https://netsec.unipr.it/project/nemo). The *nemo.jar* file is included in the */lib* folder. 
