@@ -27,8 +27,14 @@ public abstract class TtnTest {
 		boolean VERBOSE= flags.getBoolean("-v","verbose mode");
 		String user= flags.getString("-u",null,"user","TTN user");
 		String apiKey= flags.getString("-k",null,"key","TTN API key e.g. 'NNSXS.XXX'");
-		String applicationId= flags.getString("-a",null,"app","Application ID");;
-		String deviceId= flags.getString("-d",null,"device","Device ID");;
+		String applicationId= flags.getString("-a",null,"appid","Application ID");
+		String deviceId= flags.getString("-d",null,"devid","Device ID");
+		boolean help= flags.getBoolean("-h",null,"prints this message");
+		
+		if (help) {
+			System.out.println(flags.toUsageString(TtnTest.class));
+			return;
+		}
 
 		if (VERBOSE) TtnAPI.DEBUG=true;
 		TtnAPI ttn= new TtnAPI(apiUrl,user,apiKey);
