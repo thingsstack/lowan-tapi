@@ -2,7 +2,7 @@
 
 This is an independent Java implementation of The Things Network (TTN) REST API.
 
-In order to communicate with TTN you need a valid username and API access key from TTN. To create the new API key, select API keys menu in The Things Stack console and then click on + Add API key.
+In order to communicate with TTN you need a valid username and API access key from TTN. To create an API key, select API keys menu in The Things Stack console and then click on + Add API key.
 
 
 ## Example: TtnTest
