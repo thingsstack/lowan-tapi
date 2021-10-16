@@ -8,7 +8,10 @@ As a very simple of usage you can see the test.TtnTest class (in /src/test folde
 
 In order to run test.TtnTest you have to pass a TTN username and API authentication key as arguments. e.g.:
 ```
-java -cp lib/nemo.jar;lib/ttnapi.jar ttn.TtnTest -u user -k NNSXS.XXXX
+java -cp lib/nemo.jar;lib/ttnapi.jar ttn.TtnTest -u user -k NNSXS.XXXX [-a appid] [-d devid] [-v]
 ```
 
-A verbose output can be obtained by adding the '-v' option.
+Optional arguments are:
+ * -a app-id     specifies the application ID;
+ * -d dev-id     specifies the device ID;
+ * -h            prints a help message.
