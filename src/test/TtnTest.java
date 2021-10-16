@@ -77,7 +77,7 @@ public abstract class TtnTest {
 						String devEUI= event.result.identifiers[0].device_ids.dev_eui;
 						String payload= event.result.data.uplink_message.frm_payload;
 						//log("payload: "+payload);					
-						log("time: "+DateFormat.formatHHmmssSSS(new Date())+" payload: 0x"+Bytes.toHex(Base64.decode(payload)));					
+						log(DateFormat.formatHHmmssSSS(new Date())+": payload: 0x"+Bytes.toHex(Base64.decode(payload)));					
 					}
 				}
 			}
