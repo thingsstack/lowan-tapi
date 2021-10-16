@@ -5,9 +5,11 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.util.Date;
 
 import org.zoolu.util.Base64;
 import org.zoolu.util.Bytes;
+import org.zoolu.util.DateFormat;
 import org.zoolu.util.Flags;
 
 import it.unipr.netsec.thethingsnetwork.TtnAPI;
@@ -18,6 +20,12 @@ import it.unipr.netsec.thethingsnetwork.api.Result;
 
 
 public abstract class TtnTest {
+	
+	
+	private static void log(String str) {
+		System.out.println("OUT: "+str);
+	}
+	
 	
 	public static void main(String[] args) throws IOException {
 		
@@ -41,15 +49,15 @@ public abstract class TtnTest {
 		
 		// get application list
 		String appList= ttn.applicationRegistryList();
-		System.out.println("OUT: application list: "+appList);
+		log("application list: "+appList);
 
 		// get device list of a given application
 		if (applicationId==null) applicationId= JSON.fromJson(appList,Applications.class).applications[0].ids.application_id;
 		String devList= ttn.endDeviceRegistryList(applicationId);
-		System.out.println("OUT: device list: "+devList);
+		log("device list: "+devList);
 
 		// create new application (DOES NOT WORK)
-		//System.out.println("OUT: create application: "+ttn.applicationRegistryCreate("new-app"));		
+		//log("create application: "+ttn.applicationRegistryCreate("new-app"));		
 		
 		// get events of the first device
 		if (deviceId==null) deviceId= JSON.fromJson(devList,EndDevices.class).end_devices[0].ids.device_id;
@@ -58,18 +66,18 @@ public abstract class TtnTest {
 			BufferedReader in=new BufferedReader(new InputStreamReader(stream));
 			while (true) {
 				String line= in.readLine();
-				//if (VERBOSE) System.out.println("OUT: line: "+line);
+				//if (VERBOSE) log("line: "+line);
 				if (line.startsWith("{")) {
-					if (VERBOSE) System.out.println("OUT: event: "+line);
+					if (VERBOSE) log("event: "+line);
 					Result event= JSON.fromJson(line,Result.class);
-					//if (VERBOSE) System.out.println("OUT: event: "+JSON.toJson(event));
+					//if (VERBOSE) log("event: "+JSON.toJson(event));
 					if (event.result.name.equals("as.up.data.forward")) {				
 						String appId= event.result.identifiers[0].device_ids.application_ids.application_id;
 						String devId= event.result.identifiers[0].device_ids.device_id;
 						String devEUI= event.result.identifiers[0].device_ids.dev_eui;
 						String payload= event.result.data.uplink_message.frm_payload;
-						//System.out.println("OUT: payload: "+payload);					
-						System.out.println("OUT: payload: 0x"+Bytes.toHex(Base64.decode(payload)));					
+						//log("payload: "+payload);					
+						log("time: "+DateFormat.formatHHmmssSSS(new Date())+" payload: 0x"+Bytes.toHex(Base64.decode(payload)));					
 					}
 				}
 			}
