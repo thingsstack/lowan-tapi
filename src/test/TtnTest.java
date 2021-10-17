@@ -33,6 +33,7 @@ public abstract class TtnTest {
 		
 		Flags flags= new Flags(args);
 		boolean VERBOSE= flags.getBoolean("-v","verbose mode");
+		boolean DEBUG= flags.getBoolean("-vv","very verbose mode");
 		String user= flags.getString("-u",null,"user","TTN user");
 		String apiKey= flags.getString("-k",null,"key","TTN API key e.g. 'NNSXS.XXX'");
 		String applicationId= flags.getString("-a",null,"appid","Application ID");
@@ -44,7 +45,10 @@ public abstract class TtnTest {
 			return;
 		}
 
-		if (VERBOSE) TtnAPI.DEBUG=true;
+		if (DEBUG) {
+			VERBOSE=true;
+			TtnAPI.DEBUG=true;
+		}
 		TtnAPI ttn= new TtnAPI(apiUrl,user,apiKey);
 		
 		// get application list
