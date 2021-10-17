@@ -37,7 +37,6 @@ public abstract class TtnTest {
 		String apiKey= flags.getString("-k",null,"key","TTN API key e.g. 'NNSXS.XXX'");
 		String applicationId= flags.getString("-a",null,"appid","Application ID");
 		String deviceId= flags.getString("-d",null,"devid","Device ID");
-		//String type= flags.getString("-t",null,"type","device type");
 		boolean help= flags.getBoolean("-h","prints this message");
 		
 		if (help) {
@@ -79,14 +78,6 @@ public abstract class TtnTest {
 						String payload= event.result.data.uplink_message.frm_payload;
 						//log("payload: "+payload);
 						log(DateFormat.formatHHmmssSSS(new Date())+": payload: 0x"+Bytes.toHex(Base64.decode(payload)));					
-						/*byte[] data= Base64.decode(payload);
-						switch (type) {
-							case "LS01" : payload= new DraginoLSE01Payload(data).toString(); break;
-							case "LHT65" : payload= new DraginoLHT65Payload(data).toString(); break;
-							default : payload= "0x"+Bytes.toHex(data);
-						}
-						log(DateFormat.formatHHmmssSSS(new Date())+": "+payload);				
-						*/
 					}
 				}
 			}
