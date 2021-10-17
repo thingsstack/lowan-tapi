@@ -72,10 +72,11 @@ public abstract class TtnTest {
 				String line= in.readLine();
 				//if (VERBOSE) log("line: "+line);
 				if (line.startsWith("{")) {
-					if (VERBOSE) log("event: "+line);
+					if (DEBUG) log("event: "+line);
 					Result event= JSON.fromJson(line,Result.class);
+					if (VERBOSE && !DEBUG && event.result.name.startsWith("as.")) log("event: "+line);
 					//if (VERBOSE) log("event: "+JSON.toJson(event));
-					if (event.result.name.equals("as.up.data.forward")) {				
+					if (event.result.name.equals("as.up.data.forward")) {
 						String appId= event.result.identifiers[0].device_ids.application_ids.application_id;
 						String devId= event.result.identifiers[0].device_ids.device_id;
 						String devEUI= event.result.identifiers[0].device_ids.dev_eui;
