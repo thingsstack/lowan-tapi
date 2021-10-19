@@ -11,7 +11,7 @@ As a very simple example of usage you can see the **test.TtnTest** class (in */s
 
 In order to run **test.TtnTest** you have to pass a valid TTN username and API key to the program as arguments. e.g.:
 ```
-java -cp lib/nemo.jar;lib/ttnapi.jar ttn.TtnTest -u userYYY -k NNSXS.XXXX [-a appid] [-d devid] [-v] [-h]
+java -cp "lib/*" ttn.TtnTest -u userYYY -k NNSXS.XXXX [-a appid] [-d devid] [-v] [-h]
 ```
 
 Optional arguments are:
