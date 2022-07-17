@@ -1,6 +1,15 @@
-# TTN REST API
+# TTN, All-Things-Talk, and other APIs
 
-This is an independent Java implementation of The Things Network (TTN) REST API.
+Independent Java implementation of the following APIs:
+* [The Things Network (TTN)]() API;
+* [All-Things-Talk]() API;
+* [OpenWeather]() API.
+
+For handling CBOR data, the third party [JACOB](https://github.com/jawi/jacob) code has been included.
+
+
+
+# TTN
 
 In order to communicate with TTN you need a valid username and API access key from TTN. To create an API key, select API keys menu in The Things Stack console and then click on + Add API key.
 
