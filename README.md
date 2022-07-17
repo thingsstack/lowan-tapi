@@ -38,7 +38,7 @@ Optional arguments are:
 A second example is the scheduling of downlink data trasmissions using TTN.
 In order to instruct the TTN application server to send data to a device (using the downlink interface), you have to first create a Webhook in TTN (if not already present) and [generate an API key](https://www.thethingsindustries.com/docs/integrations/webhooks/scheduling-downlinks/).
 
-An example of scheduling of a downlink transmission id provided by the following **test.TtnTest** command:
+As an example, you can schedule a downlink transmission using **test.TtnTest** with the following command:
 ```
 java -cp lib/* ttn.TtnTest -u userUUUU -k NNSXS.XXXX -app appidZZZZ -wh webhookidWWWW -dev devidYYYY -fb 1 -dl hexdataHHHH -vvv
 ```
