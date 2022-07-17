@@ -1,9 +1,11 @@
-# TTN, All-Things-Talk, and other APIs
+# TTN and All-Things-Talk APIs and utilities
 
-Independent Java implementation of the following APIs:
-* [The Things Network (TTN)]() API;
-* [All-Things-Talk]() API;
-* [OpenWeather]() API.
+This project provides an independent Java implementation of the following APIs:
+* [The Things Network (TTN)](https://www.thethingsindustries.com/docs/integrations/) API;
+* [All-Things-Talk](https://api.allthingstalk.io/swagger/ui/index) API;
+* [OpenWeather](https://openweathermap.org) API.
+
+Based on these API, some virtual devices and server webhooks have been implemented.
 
 For handling CBOR data, the third party [JACOB](https://github.com/jawi/jacob) code has been included.
 
