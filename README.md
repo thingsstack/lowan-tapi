@@ -16,25 +16,35 @@ For handling CBOR data, the third party [JACOB](https://github.com/jawi/jacob) c
 In order to communicate with TTN you need a valid username and API access key from TTN. To create an API key, select API keys menu in The Things Stack console and then click on + Add API key.
 
 
-## Example: TtnTest
+## Examples
 
 As a very simple example of usage you can see the **test.TtnTest** class (in */src/test* folder). It is a command line program that uses TTN API for listing your applications and devices on TTN, and for retrieving data payload sent to TTN from a given device.
 
 In order to run **test.TtnTest** you have to pass a valid TTN username and API key to the program as arguments. e.g.:
 ```
-java -cp lib/* ttn.TtnTest -u userYYY -k NNSXS.XXXX [-a appid] [-d devid] [-v] [-h]
+java -cp lib/* ttn.TtnTest -u userYYY -k NNSXS.XXXX [-app appid] [-dev devid] [-v] [-h]
 ```
 
 Optional arguments are:
 
 | option | description |
 | ------------- | ------------- |
-| -a appid | specifies the application ID; if not present, the first application is used; |
-| -d devid | specifies the device ID; if not present, the first device of the given application is used; |
+| -app appid | specifies the application ID; if not present, the first application is used; |
+| -dev devid | specifies the device ID; if not present, the first device of the given application is used; |
 | -v | verbose mode; |
 | -h | prints a help message. |
 
 
+A second example is the scheduling of downlink data trasmissions using TTN.
+In order to instruct the TTN application server to send data to a device (using the downlink interface), you have to first create a Webhook in TTN (if not already present) and [generate an API key](https://www.thethingsindustries.com/docs/integrations/webhooks/scheduling-downlinks/).
+
+An example of scheduling of a downlink transmission id provided by the following **test.TtnTest** command:
+```
+java -cp lib/* ttn.TtnTest -u userUUUU -k NNSXS.XXXX -app appidZZZZ -wh webhookidWWWW -dev devidYYYY -fb 1 -dl hexdataHHHH -vvv
+```
+
+
+
 ## Dependancies
 
-The code uses the *nemo.jar* library from the Nemo project (https://netsec.unipr.it/project/nemo). The *nemo.jar* file is included in the */lib* folder. 
+The code uses the *nemo.jar* library from the Nemo project (https://netsec.unipr.it/project/nemo). All jar files are included in the */lib* folder. 
