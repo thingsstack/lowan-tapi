@@ -1,4 +1,4 @@
-# TTN and All-Things-Talk APIs and utilities
+# TTN and All-Things-Talk APIs and Utilities
 
 This project provides an independent Java implementation of the following APIs:
 * [The Things Network (TTN)](https://www.thethingsindustries.com/docs/integrations/) API;
